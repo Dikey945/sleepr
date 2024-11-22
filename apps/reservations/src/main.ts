@@ -11,6 +11,7 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
+      transform: true, // Enables data transformation based on @Type decorator
     }),
   );
   app.useLogger(app.get(Logger));
