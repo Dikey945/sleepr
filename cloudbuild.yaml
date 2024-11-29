@@ -44,7 +44,7 @@ steps:
       'push',
       'us-east4-docker.pkg.dev/numeric-scope-379311/payments/production',
     ]
-  #    Notifications service
+  #    Notifications servic
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
