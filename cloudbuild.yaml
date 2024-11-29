@@ -1,0 +1,61 @@
+steps:
+  # Reservations
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/reservations/production',
+      '-f',
+      'apps/reservations/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/reservations/production',
+    ]
+  #    Auth service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/auth/production',
+      '-f',
+      'apps/auth/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/auth/production',
+    ]
+  #    Payments service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/payments/production',
+      '-f',
+      'apps/payments/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/payments/production',
+    ]
+  #    Notifications service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/notifications/production',
+      '-f',
+      'apps/notifications/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/numeric-scope-379311/notifications/production',
+    ]

@@ -1,4 +1,3 @@
-import Stripe from 'stripe';
 import { CardDto } from '@app/common/dto/card.dto';
 import {
   IsDefined,
