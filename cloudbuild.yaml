@@ -1,5 +1,5 @@
 steps:
-  # Reservations
+  # Reservations service
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
